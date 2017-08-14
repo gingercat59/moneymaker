@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
          mTimeValue.setText(player.getStepValue());
          mMoneyValue.setText(player.getMoneyValue());
 
+
+
      }
 
 
