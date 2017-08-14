@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ailstars.moneymaker.MainActivity">
+
+    <TextView
+        android:id="@+id/Timeaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="123" />
+
+    <Button
+        android:id="@+id/buttonjob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:onClick="job"
+        android:text="Работа"
+        app:layout_constraintBottom_toTopOf="@+id/buttonbusiness"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/buttonbusiness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:onClick="business"
+        android:text="Бизнес"
+        app:layout_constraintBottom_toTopOf="@+id/buttonhobby"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/buttonhobby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:onClick="hobby"
+        android:text="Хобби"
+        app:layout_constraintBottom_toTopOf="@+id/buttonproperty"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/buttonproperty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:onClick="property"
+        android:text="Имущество"
+        app:layout_constraintBottom_toTopOf="@+id/buttonbank"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/buttonbank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:onClick="bank"
+        android:text="Банк"
+        app:layout_constraintBottom_toTopOf="@+id/buttonbalance"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/buttonbalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="16dp"
+        android:onClick="balance"
+        android:text="Баланс"
+        app:layout_constraintBottom_toTopOf="@+id/buttoneducation"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/buttoneducation"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:onClick="education"
+        android:text="Образование и навыки"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/buttonconditions"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:onClick="conditions"
+        android:text=" Условия жизни"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/buttoneducation"
+        app:layout_constraintRight_toLeftOf="@+id/buttonintertament" />
+
+    <Button
+        android:id="@+id/buttonintertament"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="0dp"
+        android:onClick="intertament"
+        android:text="Развлечения"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/buttonnextmove" />
+
+    <Button
+        android:id="@+id/buttonnextmove"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="NextMove"
+        android:text="Сделать ход"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/moneycounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="123"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/Timeaccount" />
+
+</android.support.constraint.ConstraintLayout>

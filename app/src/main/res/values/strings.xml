@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MoneyMaker</string>
+    <string name="title_activity_job">Job</string>
+    <string name="title_activity_balance">Balance</string>
+</resources>
