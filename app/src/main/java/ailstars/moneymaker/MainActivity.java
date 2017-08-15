@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+                player.createMove();
                 renderMainView();
 
             }
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     }
      private void renderMainView() {
 
-         mTimeValue.setText(player.getStepValue());
+         mTimeValue.setText("Прошло "+player.getStepValue() + " недель" );
          mMoneyValue.setText(player.getMoneyValue());
 
 
