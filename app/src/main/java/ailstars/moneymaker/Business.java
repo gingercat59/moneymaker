@@ -13,10 +13,12 @@ public class Business extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_business);
 
+
     }
 
     public void businessbackward(View view) {
         Intent intent = new Intent(Business.this, MainActivity.class);
         startActivity(intent);
+
     }
 }
