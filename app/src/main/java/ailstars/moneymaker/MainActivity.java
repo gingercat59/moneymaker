@@ -1,18 +1,25 @@
 package ailstars.moneymaker;
 
 import android.content.Intent;
-import android.opengl.GLSurfaceView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import ailstars.moneymaker.models.Player;
 
 public class MainActivity extends AppCompatActivity {
     public Button mNextMove;
     TextView mTimeValue;
     TextView mMoneyValue;
     Player player;
+    private int mood = 0;
+    private ProgressBar moodbar;
+    private TextView tvProgressHorizontal;
+
+
 
 
     @Override
@@ -35,13 +42,18 @@ public class MainActivity extends AppCompatActivity {
 
         mNextMove.setOnClickListener(createMove);
 
+        moodbar = (ProgressBar) findViewById(R.id.moodbar);
+        tvProgressHorizontal = (TextView) findViewById(R.id.moodvalue);
+
+
     }
      private void renderMainView() {
 
          mTimeValue.setText("Прошло "+player.getStepValue() + " недель" );
          mMoneyValue.setText(player.getMoneyValue());
-
-
+         moodbar.setProgress(mood);
+         Button business= (Button) findViewById(R.id.buttonbusiness);
+         business.setText(business.getText()+" "+player.getMoneyFromBusiness());
 
      }
 
@@ -59,49 +71,49 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void job(View view) {
-        Intent intent = new Intent(MainActivity.this, Job.class);
+        Intent intent = new Intent(MainActivity.this, JobActivity.class);
         startActivity(intent);
 
     }
 
     public void business(View view) {
-        Intent intent = new Intent(MainActivity.this, Business.class);
+        Intent intent = new Intent(MainActivity.this, BusinessActivity.class);
         startActivity(intent);
     }
 
     public void hobby(View view) {
-        Intent intent = new Intent(MainActivity.this, Hobby.class);
+        Intent intent = new Intent(MainActivity.this, HobbyActivity.class);
         startActivity(intent);
 
     }
 
     public void property(View view) {
-        Intent intent = new Intent(MainActivity.this, Property.class);
+        Intent intent = new Intent(MainActivity.this, PropertyActivity.class);
         startActivity(intent);
     }
 
     public void bank(View view) {
-        Intent intent = new Intent(MainActivity.this, Bank.class);
+        Intent intent = new Intent(MainActivity.this, BankActivity.class);
         startActivity(intent);
     }
 
     public void balance(View view) {
-        Intent intent = new Intent(MainActivity.this, Balance.class);
+        Intent intent = new Intent(MainActivity.this, BalanceActivity.class);
         startActivity(intent);
     }
 
     public void education(View view) {
-        Intent intent = new Intent(MainActivity.this, Education.class);
+        Intent intent = new Intent(MainActivity.this, EducationActivity.class);
         startActivity(intent);
     }
 
     public void conditions(View view) {
-        Intent intent = new Intent(MainActivity.this, Conditions.class);
+        Intent intent = new Intent(MainActivity.this, ConditionsActivity.class);
         startActivity(intent);
     }
 
     public void intertament(View view) {
-        Intent intent = new Intent(MainActivity.this, Intertament.class);
+        Intent intent = new Intent(MainActivity.this, IntertamentActivity.class);
         startActivity(intent);
     }
 }

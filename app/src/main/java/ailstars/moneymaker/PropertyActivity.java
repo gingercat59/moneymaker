@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class Property extends AppCompatActivity {
+public class PropertyActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +14,7 @@ public class Property extends AppCompatActivity {
     }
 
     public void propertybackward(View view) {
-        Intent intent = new Intent(Property.this, MainActivity.class);
+        Intent intent = new Intent(PropertyActivity.this, MainActivity.class);
         startActivity(intent);
     }
 }

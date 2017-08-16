@@ -27,7 +27,7 @@
         <activity android:name=".Balance" />
         <activity android:name=".Education" />
         <activity android:name=".Conditions" />
-        <activity android:name=".Intertament"></activity>
+        <activity android:name=".Intertament" />
     </application>
 
 </manifest>

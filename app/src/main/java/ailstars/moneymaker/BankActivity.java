@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class Bank extends AppCompatActivity {
+public class BankActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +14,7 @@ public class Bank extends AppCompatActivity {
     }
 
     public void bankbackward(View view) {
-        Intent intent = new Intent(Bank.this, MainActivity.class);
+        Intent intent = new Intent(BankActivity.this, MainActivity.class);
         startActivity(intent);
     }
 }
