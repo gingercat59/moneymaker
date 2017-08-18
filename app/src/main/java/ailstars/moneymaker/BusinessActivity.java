@@ -35,7 +35,7 @@ public class BusinessActivity extends AppCompatActivity {
         //Получить список Бизнесов
          final List <Business> businesslist = Business.getBusinessList();
 
-        //СоздФункцию обработкиать
+        //СоздФункцию обработки
 
         final View.OnClickListener addBusiness = new View.OnClickListener() {
 
@@ -48,7 +48,7 @@ public class BusinessActivity extends AppCompatActivity {
         };
 
         //Ищу слой для создания кнопок
-        ConstraintLayout lin = (ConstraintLayout)findViewById(R.id.businessLayout);
+        LinearLayout lin = (LinearLayout)findViewById(R.id.businessLayout);
         //Определяю параметры для размещения кноопк
         LinearLayout.LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
 
