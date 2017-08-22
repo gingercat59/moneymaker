@@ -10,6 +10,7 @@ import android.text.Layout;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.support.constraint.ConstraintLayout;
 import android.widget.LinearLayout.LayoutParams;
@@ -23,6 +24,9 @@ import ailstars.moneymaker.models.Player;
 
 public class BusinessActivity extends AppCompatActivity {
     Player player;
+    LinearLayout lay;
+    private List<EditText> editTextList = new ArrayList<EditText>();
+    View.OnClickListener getEditText;
 
 
     @Override
@@ -48,7 +52,7 @@ public class BusinessActivity extends AppCompatActivity {
         };
 
         //Ищу слой для создания кнопок
-        LinearLayout lin = (LinearLayout)findViewById(R.id.businessLayout);
+        ConstraintLayout lin = (ConstraintLayout)findViewById(R.id.businessLayout);
         //Определяю параметры для размещения кноопк
         LinearLayout.LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
 
@@ -68,9 +72,6 @@ public class BusinessActivity extends AppCompatActivity {
 
 
         }
-
-
-
 
         //Добавить Бизнес к плееру
 

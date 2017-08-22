@@ -1,5 +1,6 @@
 package ailstars.moneymaker.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,7 +12,8 @@ public class Player {
     private Integer mStep=0;
     private Float money=Float.valueOf(0);
     private int mood=100;
-    private List <Business> business;
+    private List <Business> business = new ArrayList<>();
+    private List <Property> property = new ArrayList<>();
 
 
     private Player() {
@@ -46,6 +48,7 @@ public class Player {
     private void countmoney(){
         money+=100;
         money+=getMoneyFromBusiness();
+        money+=getMoneyFromProperty();
     }
 
     private void createstep(){
@@ -56,6 +59,10 @@ public class Player {
          business.add(bus);
     }
 
+    public void addProperty(Property prop){
+        property.add(prop);
+    }
+
     public Float getMoneyFromBusiness(){
         Float result=Float.valueOf(0);
         for (Business bus:business){
@@ -64,6 +71,14 @@ public class Player {
 
         return result;
 
+    }
+
+    public Float getMoneyFromProperty(){
+        Float result=Float.valueOf(0);
+        for (Property prop:property){
+            result+=prop.getCashflow();
+        }
+        return result;
     }
 
 

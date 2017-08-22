@@ -42,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
         mNextMove.setOnClickListener(createMove);
 
-        moodbar = (ProgressBar) findViewById(R.id.moodbar);
-        tvProgressHorizontal = (TextView) findViewById(R.id.moodvalue);
 
 
     }
@@ -53,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
          mMoneyValue.setText(player.getMoneyValue());
          moodbar.setProgress(mood);
          Button business= (Button) findViewById(R.id.buttonbusiness);
-         business.setText(business.getText()+" "+player.getMoneyFromBusiness());
+         business.setText("Бизнес: "+player.getMoneyFromBusiness());
 
      }
 
@@ -65,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
          mNextMove = (Button) findViewById(R.id.buttonnextmove);
          mTimeValue = (TextView) findViewById(R.id.Timeaccount);
          mMoneyValue = (TextView) findViewById(R.id.moneycounter);
+         moodbar = (ProgressBar) findViewById(R.id.moodbar);
+         tvProgressHorizontal = (TextView) findViewById(R.id.moodvalue);
 
 
      }
