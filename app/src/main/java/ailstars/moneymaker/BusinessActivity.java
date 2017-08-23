@@ -53,7 +53,7 @@ public class BusinessActivity extends AppCompatActivity {
         };
 
         //Ищу слой для создания кнопок
-        ConstraintLayout lin = (ConstraintLayout)findViewById(R.id.businessLayout);
+        LinearLayout lin = (LinearLayout)findViewById(R.id.businessLayout);
         //Определяю параметры для размещения кноопк
         LinearLayout.LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
 
