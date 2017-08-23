@@ -27,6 +27,13 @@ public class Player {
         return instance;
     }
 
+    Player Playername = Player.getInstance();
+    //получить прайс
+    // сравнить с ценой
+    //если больше то
+    // если меньше то
+
+
     public String getStepValue(){
         return mStep.toString();
     }

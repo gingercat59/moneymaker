@@ -7,15 +7,14 @@
     tools:context="ailstars.moneymaker.EducationActivity">
 
 
-    <Button
+    <ImageButton
         android:id="@+id/ConditionsBackward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="back"
-        android:onClick="educationsbackward"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="0dp"
         android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
+        android:layout_marginTop="0dp"
+        android:onClick="educationsbackward"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/homeAsUpIndicator" />
 </android.support.constraint.ConstraintLayout>
