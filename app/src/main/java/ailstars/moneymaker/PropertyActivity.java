@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 
 import java.util.List;
 
@@ -39,16 +40,16 @@ public class PropertyActivity extends AppCompatActivity {
         };
 
         //слой для создания кнопок
-        ConstraintLayout lin = (ConstraintLayout)findViewById(R.id.propertyLayout);
+        LinearLayout lin = (LinearLayout)findViewById(R.id.propertyLayout);
         //параметры для размешения кнопок
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        LinearLayout.LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 
         // в цикле обойти
         for (Property prop:propertylist){
             //создание кнопки для каждого класса
 
             Button button = new Button(PropertyActivity.this);
-            button.setText(prop.getName()+", cost:"+String.valueOf(prop.getPrice())+", cashflow"+String.valueOf(prop.getCashflow())+", mood"+String.valueOf(prop.getMoodmod()));
+            button.setText(prop.getName()+", cost: "+String.valueOf(prop.getPrice())+", cashflow: "+String.valueOf(prop.getCashflow())+", mood: "+String.valueOf(prop.getMoodmod()));
             button.setLayoutParams(layoutParams);
             button.setId(propertylist.indexOf(prop));
             lin.addView(button);
