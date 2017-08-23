@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Layout;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -62,9 +63,11 @@ public class BusinessActivity extends AppCompatActivity {
 
             Button button = new Button(BusinessActivity.this);
             button.setText(bus.getName()+", cost:"+String.valueOf(bus.getPrice())+", cashflow"+String.valueOf(bus.getIncome()));
+            layoutParams.gravity= Gravity.CENTER_HORIZONTAL;
             button.setLayoutParams(layoutParams);
             button.setId(businesslist.indexOf(bus));
             lin.addView(button);
+
 
             //Повесить на кнопки обработчик
             button.setOnClickListener(addBusiness);
