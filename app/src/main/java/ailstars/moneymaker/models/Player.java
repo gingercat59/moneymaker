@@ -59,6 +59,8 @@ public class Player {
          business.add(bus);
     }
 
+
+
     public void addProperty(Property prop){
         property.add(prop);
     }

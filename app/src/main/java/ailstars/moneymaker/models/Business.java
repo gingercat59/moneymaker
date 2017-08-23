@@ -9,8 +9,9 @@ import java.util.List;
 
 public class Business {
     private final String name;
-    private final float price;
+    public final float price;
     private final float income;
+
 
 
     public String getName() {
@@ -37,7 +38,7 @@ public class Business {
 
     public static List <Business> getBusinessList(){
         List <Business> list = new ArrayList();
-        list.add(getInstance("Шаурмяшная",500000,9000));
+        list.add(getInstance("Шаурмяшная",500000 ,9000 ));
         list.add(getInstance("Автосервис у Ашота",1000000,19000));
         list.add(getInstance("филиал Старбакса",400000,7500));
         list.add(getInstance("Автомойка в гараже",300000,6000));
