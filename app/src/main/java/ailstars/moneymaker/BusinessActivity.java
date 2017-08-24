@@ -38,7 +38,7 @@ public class BusinessActivity extends AppCompatActivity {
         player = Player.getInstance();
 
         //Получить список Бизнесов
-         final List <Business> businesslist = Business.getBusinessList();
+        final List <Business> businesslist = Business.getBusinessList();
 
         //СоздФункцию обработки
 
@@ -76,17 +76,9 @@ public class BusinessActivity extends AppCompatActivity {
             }
             lin.addView(button);
 
-
             //Повесить на кнопки обработчик
             button.setOnClickListener(addBusiness);
-
-
-
         }
-
-        //Добавить Бизнес к плееру
-
-
     }
 
 

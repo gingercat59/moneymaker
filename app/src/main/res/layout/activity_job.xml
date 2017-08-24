@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/jobLayout"
     tools:context="ailstars.moneymaker.JobActivity">
 
-    <Button
-        android:id="@+id/JobBackward"
+    <ImageButton
+        android:id="@+id/ConditionsBackward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="back"
         android:onClick="jobbackward"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="0dp"
-        android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
 
 </android.support.design.widget.CoordinatorLayout>

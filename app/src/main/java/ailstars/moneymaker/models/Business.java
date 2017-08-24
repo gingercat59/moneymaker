@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Business {
     private final String name;
-    public final float price;
+    private final float price;
     private final float income;
 
 

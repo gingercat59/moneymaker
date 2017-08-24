@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -34,7 +35,12 @@ public class PropertyActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int id = view.getId();
-                player.addProperty(propertylist.get(id));
+                //проверить можно ли куптиь
+                if (player.canBuyProperty(propertylist.get(id))){
+                    player.buyProperty(propertylist.get(id));
+                    restartActivity();
+                }
+                //player.addProperty(propertylist.get(id));
 
             }
         };
@@ -50,14 +56,23 @@ public class PropertyActivity extends AppCompatActivity {
 
             Button button = new Button(PropertyActivity.this);
             button.setText(prop.getName()+", cost: "+String.valueOf(prop.getPrice())+", cashflow: "+String.valueOf(prop.getCashflow())+", mood: "+String.valueOf(prop.getMoodmod()));
+            layoutParams.gravity= Gravity.CENTER_HORIZONTAL;
             button.setLayoutParams(layoutParams);
             button.setId(propertylist.indexOf(prop));
+            if (!player.canBuyProperty(prop)){
+                button.setEnabled(false);
+            }
             lin.addView(button);
 
             //обработчик для кнопок
 
             button.setOnClickListener(addProperty);
         }
+    }
+
+    private void restartActivity(){
+        finish();
+        this.startActivity(new Intent(this,this.getClass()));
     }
 
     public void propertybackward(View view) {

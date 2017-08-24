@@ -35,6 +35,13 @@ public class Player {
         return false;
     }
 
+    public boolean canBuyProperty (Property property){
+        if (property.getPrice() <=money) {
+            return true;
+        }
+        return false;
+    }
+
 
     public String getStepValue(){
         return mStep.toString();
@@ -75,7 +82,6 @@ public class Player {
         addBusiness(business);
         lessMoney(business.getPrice());
     }
-
     private void lessMoney(Float value){
         money-=value;
     }
@@ -83,6 +89,12 @@ public class Player {
     public void addProperty(Property prop){
         property.add(prop);
     }
+
+    public void buyProperty(Property property){
+        addProperty(property);
+        lessMoney(property.getPrice());
+    }
+
 
     public Float getMoneyFromBusiness(){
         Float result=Float.valueOf(0);
