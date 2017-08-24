@@ -47,10 +47,15 @@ public class BusinessActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int id=view.getId();
-                player.addBusiness(businesslist.get(id));
+                //проверить может ли купить
+                if( player.canBuyBasiness(businesslist.get(id))){
+                    player.buyBusiness(businesslist.get(id));
+                    restartActivity();
+                }
 
             }
         };
+
 
         //Ищу слой для создания кнопок
         LinearLayout lin = (LinearLayout)findViewById(R.id.businessLayout);
@@ -66,6 +71,9 @@ public class BusinessActivity extends AppCompatActivity {
             layoutParams.gravity= Gravity.CENTER_HORIZONTAL;
             button.setLayoutParams(layoutParams);
             button.setId(businesslist.indexOf(bus));
+            if (!player.canBuyBasiness(bus)){
+                button.setEnabled(false);
+            }
             lin.addView(button);
 
 
@@ -81,11 +89,20 @@ public class BusinessActivity extends AppCompatActivity {
 
     }
 
+
+
+    private void restartActivity(){
+        finish();
+        this.startActivity(new Intent(this,this.getClass()));
+    }
+
     public void businessbackward(View view) {
         Intent intent = new Intent(BusinessActivity.this, MainActivity.class);
         startActivity(intent);
 
     }
+
+
 
 
 }

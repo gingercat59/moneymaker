@@ -16,6 +16,7 @@ public class Player {
     private List <Property> property = new ArrayList<>();
 
 
+
     private Player() {
     }
 
@@ -27,11 +28,12 @@ public class Player {
         return instance;
     }
 
-    Player Playername = Player.getInstance();
-    //получить прайс
-    // сравнить с ценой
-    //если больше то
-    // если меньше то
+    public boolean canBuyBasiness (Business business){
+        if (business.getPrice() <= money) {
+            return true;
+        }
+        return false;
+    }
 
 
     public String getStepValue(){
@@ -53,20 +55,30 @@ public class Player {
     }
 
     private void countmoney(){
-        money+=100;
+        money+=15000;
         money+=getMoneyFromBusiness();
         money+=getMoneyFromProperty();
     }
 
+    //сделать ход
     private void createstep(){
         mStep++;
     }
 
-    public void addBusiness(Business bus){
+    //добавить бизнес
+    private void addBusiness(Business bus){
          business.add(bus);
     }
 
+    //вычетание денег за покупку бизнеса
+    public void buyBusiness(Business business){
+        addBusiness(business);
+        lessMoney(business.getPrice());
+    }
 
+    private void lessMoney(Float value){
+        money-=value;
+    }
 
     public void addProperty(Property prop){
         property.add(prop);
