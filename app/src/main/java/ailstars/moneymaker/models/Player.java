@@ -9,12 +9,12 @@ import java.util.List;
 
 public class Player {
     private static Player instance;
-    private Integer mStep=0;
-    private Float money=Float.valueOf(0);
-    private int mood=100;
-    private List <Business> business = new ArrayList<>();
-    private List <Property> property = new ArrayList<>();
-
+    private Integer mStep = 0;
+    private Float money = Float.valueOf(0);
+    private int mood = 100;
+    private Job job;
+    private List<Business> business = new ArrayList<>();
+    private List<Property> property = new ArrayList<>();
 
 
     private Player() {
@@ -28,91 +28,110 @@ public class Player {
         return instance;
     }
 
-    public boolean canBuyBasiness (Business business){
+    public boolean canBuyBasiness(Business business) {
         if (business.getPrice() <= money) {
             return true;
         }
         return false;
     }
 
-    public boolean canBuyProperty (Property property){
-        if (property.getPrice() <=money) {
+    public boolean canBuyProperty(Property property) {
+        if (property.getPrice() <= money) {
             return true;
         }
         return false;
     }
 
+    public boolean canGetJob(Job job) {
+        return true;
+    }
 
-    public String getStepValue(){
+    public void setJob(Job jb) {
+        job = jb;
+
+    }
+
+    public Job getJob(){
+        return job;
+    }
+
+    public String getStepValue() {
         return mStep.toString();
     }
 
-    public String getMoneyValue(){
+    public String getMoneyValue() {
         return money.toString();
     }
 
-    public void createMove(){
+    public void createMove() {
         createstep();
         countmoney();
         countmood();
     }
 
-    private void countmood (){
-        mood-=5;
+    private void countmood() {
+        mood -= 5;
     }
 
-    private void countmoney(){
-        money+=15000;
-        money+=getMoneyFromBusiness();
-        money+=getMoneyFromProperty();
+    private void countmoney() {
+        money += getMoneyFromJob();
+        money += getMoneyFromBusiness();
+        money += getMoneyFromProperty();
+
     }
 
     //сделать ход
-    private void createstep(){
+    private void createstep() {
         mStep++;
     }
 
     //добавить бизнес
-    private void addBusiness(Business bus){
-         business.add(bus);
+    private void addBusiness(Business bus) {
+        business.add(bus);
     }
 
     //вычетание денег за покупку бизнеса
-    public void buyBusiness(Business business){
+    public void buyBusiness(Business business) {
         addBusiness(business);
         lessMoney(business.getPrice());
     }
-    private void lessMoney(Float value){
-        money-=value;
-    }
 
-    public void addProperty(Property prop){
+    private void addProperty(Property prop) {
         property.add(prop);
     }
 
-    public void buyProperty(Property property){
+    public void buyProperty(Property property) {
         addProperty(property);
         lessMoney(property.getPrice());
     }
 
+    // вычетание денег
+    private void lessMoney(Float value) {
+        money -= value;
+    }
 
-    public Float getMoneyFromBusiness(){
-        Float result=Float.valueOf(0);
-        for (Business bus:business){
-            result+=bus.getIncome();
+    public Float getMoneyFromBusiness() {
+        Float result = Float.valueOf(0);
+        for (Business bus : business) {
+            result += bus.getIncome();
         }
 
         return result;
 
     }
 
-    public Float getMoneyFromProperty(){
-        Float result=Float.valueOf(0);
-        for (Property prop:property){
-            result+=prop.getCashflow();
+    public Float getMoneyFromProperty() {
+        Float result = Float.valueOf(0);
+        for (Property prop : property) {
+            result += prop.getCashflow();
         }
         return result;
     }
 
-
+    public Float getMoneyFromJob() {
+        if (job != null) {
+            return job.getIncome();
+        }
+        return Float.valueOf(0);
+    }
 }

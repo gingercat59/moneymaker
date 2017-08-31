@@ -50,8 +50,12 @@ public class MainActivity extends AppCompatActivity {
          mTimeValue.setText("Прошло "+player.getStepValue() + " недель" );
          mMoneyValue.setText(player.getMoneyValue());
          moodbar.setProgress(mood);
-         Button business= (Button) findViewById(R.id.buttonbusiness);
+         Button business = (Button) findViewById(R.id.buttonbusiness);
          business.setText("Бизнес: "+player.getMoneyFromBusiness());
+         Button property = (Button) findViewById(R.id.buttonproperty);
+         property.setText("Имущество: "+player.getMoneyFromProperty());
+         Button job = (Button) findViewById(R.id.buttonjob);
+         job.setText("Работа: "+player.getMoneyFromJob());
 
      }
 

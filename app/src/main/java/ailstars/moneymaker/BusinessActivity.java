@@ -25,10 +25,6 @@ import ailstars.moneymaker.models.Player;
 
 public class BusinessActivity extends AppCompatActivity {
     Player player;
-    LinearLayout lay;
-    private List<EditText> editTextList = new ArrayList<EditText>();
-    View.OnClickListener getEditText;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
