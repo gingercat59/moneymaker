@@ -65,19 +65,24 @@ public class Player {
 
     public void createMove() {
         createstep();
-        countmoney();
-        countmood();
+        addMoney(countMoney());
+        countMood();
     }
 
-    private void countmood() {
+    private void countMood() {
         mood -= 5;
     }
 
-    private void countmoney() {
-        money += getMoneyFromJob();
-        money += getMoneyFromBusiness();
-        money += getMoneyFromProperty();
+    public void addMoney(Float money) {
+        this.money += money;
+    }
 
+    public Float countMoney(){
+        Float money=Float.valueOf(0);
+        money+=getMoneyFromJob();
+        money+=getMoneyFromBusiness();
+
+        return money;
     }
 
     //сделать ход

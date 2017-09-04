@@ -5,12 +5,15 @@ package ailstars.moneymaker.models;
  */
 
 public class Account {
-    private final String type;
+
+
+    private final Types type;
     private final Float percent;
     private final Float money;
     private final Integer time;
+    private Float percentMoney=Float.valueOf(0);
 
-    public String getType(){
+    public Types getType(){
         return type;
     }
 
@@ -26,10 +29,24 @@ public class Account {
         return time;
     }
 
-    public Account (String type, Float percent, Float money, Integer time){
+    public static Account getInstance(Types type, Float percent, Float money, Integer time){
+        Account acc= new Account(type,percent,money,time);
+        return acc;
+    }
+
+    private Account (Types type, Float percent, Float money, Integer time){
         this.type=type;
         this.percent=percent;
         this.money=money;
         this.time=time;
     }
+
+
+
+    public static enum Types{
+        CREDIT,DEBT
+    }
+
 }
+
+
