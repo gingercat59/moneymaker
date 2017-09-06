@@ -1,5 +1,7 @@
 package ailstars.moneymaker.models;
 
+import android.widget.Button;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,9 +17,10 @@ public class Player {
     private Job job;
     private List<Business> business = new ArrayList<>();
     private List<Property> property = new ArrayList<>();
-
+    private final Bank bank;
 
     private Player() {
+        bank = new Bank();
     }
 
     public static synchronized Player getInstance() {
@@ -139,4 +142,5 @@ public class Player {
         }
         return Float.valueOf(0);
     }
+
 }

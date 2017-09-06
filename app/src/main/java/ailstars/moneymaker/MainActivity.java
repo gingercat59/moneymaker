@@ -7,8 +7,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import java.util.List;
+import java.util.ArrayList;
 
 import ailstars.moneymaker.models.Player;
+import ailstars.moneymaker.study.Duck;
+import ailstars.moneymaker.study.DuckFabric;
+import ailstars.moneymaker.study.Eatable;
+import ailstars.moneymaker.study.RubberDuck;
+import ailstars.moneymaker.study.Soundable;
 
 public class MainActivity extends AppCompatActivity {
     public Button mNextMove;
@@ -26,6 +33,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+       /**DUCKS
+        *  List<Duck> dkList= DuckFabric.getDucks();
+        for(Duck dc:dkList){
+            if(dc instanceof Eatable) {
+                Eatable xc= (Eatable)dc;
+                xc.eat(223);
+                xc.getCountOfFood();
+            }
+            if(dc instanceof Soundable) {
+                Soundable xc= (Soundable)dc;
+                xc.sound();
+            }
+        }
+        */
 
         LinkViewParts();
         renderMainView();
