@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ailstars.moneymaker.models.Business;
@@ -18,6 +19,7 @@ import ailstars.moneymaker.models.Property;
 
 public class PropertyActivity extends AppCompatActivity {
     Player player;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +31,14 @@ public class PropertyActivity extends AppCompatActivity {
         //получить список имущества
         final List<Property> propertylist = Property.getPropertyList();
 
+
         //функция обработки
         final View.OnClickListener addProperty = new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 int id = view.getId();
-                //проверить можно ли куптиь
+                //проверить можно ли купить
                 if (player.canBuyProperty(propertylist.get(id))){
                     player.buyProperty(propertylist.get(id));
                     restartActivity();
@@ -44,6 +47,13 @@ public class PropertyActivity extends AppCompatActivity {
 
             }
         };
+        final View.OnClickListener sellProperty = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int id = view.getId();
+                if (player.sellProperty(propertylist.remove(id));)
+            }
+        }
 
         //слой для создания кнопок
         LinearLayout lin = (LinearLayout)findViewById(R.id.propertyLayout);

@@ -17,13 +17,14 @@ public class Bank {
     private List<Account> accountList = new ArrayList<>();
 
 
-    //проверить можно ли выдать кредит/положить депозит
-    private boolean proverka(Float countmoney) {
+    //проверить можно ли открыть депозит
+    private boolean proverkaDepozit (Float countmoney) {
         if (0 < countmoney) {
             return true;
         }
         return false;
     }
+    //проверка для кредита
 
     //если можно добавить новый пункт в список
 
@@ -34,8 +35,8 @@ public class Bank {
     private void addAccount(Account account) {
         accountList.add(account);
     }
-
     //вернуть весь список
+
 
     public static Float getPercent(Account.Types type){
         if(type.equals(Account.Types.CREDIT)){

@@ -17,6 +17,7 @@ public class Player {
     private Job job;
     private List<Business> business = new ArrayList<>();
     private List<Property> property = new ArrayList<>();
+    private List<Property> myProperty = new ArrayList<>();
     private final Bank bank;
 
     private Player() {
@@ -72,22 +73,6 @@ public class Player {
         countMood();
     }
 
-    private void countMood() {
-        mood -= 5;
-    }
-
-    public void addMoney(Float money) {
-        this.money += money;
-    }
-
-    public Float countMoney(){
-        Float money=Float.valueOf(0);
-        money+=getMoneyFromJob();
-        money+=getMoneyFromBusiness();
-
-        return money;
-    }
-
     //сделать ход
     private void createstep() {
         mStep++;
@@ -113,9 +98,29 @@ public class Player {
         lessMoney(property.getPrice());
     }
 
+    public void sellProperty(Property property){
+
+    }
+
     // вычетание денег
     private void lessMoney(Float value) {
         money -= value;
+    }
+    //добавление денег
+    public void addMoney(Float money) {
+        this.money += money;
+    }
+
+    public Float countMoney(){
+        Float money=Float.valueOf(0);
+        money+=getMoneyFromJob();
+        money+=getMoneyFromBusiness();
+
+        return money;
+    }
+
+    private void countMood() {
+        mood -= 5;
     }
 
     public Float getMoneyFromBusiness() {

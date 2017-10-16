@@ -5,6 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.List;
+
+import ailstars.moneymaker.models.Bank;
+
 public class BankActivity extends AppCompatActivity {
 
     @Override
@@ -17,4 +21,6 @@ public class BankActivity extends AppCompatActivity {
         Intent intent = new Intent(BankActivity.this, MainActivity.class);
         startActivity(intent);
     }
+
+
 }
