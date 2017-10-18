@@ -31,12 +31,18 @@ public class Property {
         return moodmod;
     }
 
+    public int getType(){
+        return  type;
+    }
+
+
     private Property(String name, int type, float price, float cashflow, Integer moodmod){
         this.name=name;
+        this.type=type;
         this.price=price;
         this.cashflow=cashflow;
         this.moodmod=moodmod;
-        this.type=type;
+
     }
 
     public static Property getInstance (String name,int type,float price, float cashflow, Integer moodmod){
@@ -53,9 +59,14 @@ public class Property {
 
         return list;
     }
-    public  static  List<Property> getMyPropertyList(){
-        List<Property> myProperty = new ArrayList<>();
-
+    public static List<Property> getSellPropertyList(){
+        List<Property> sellList = new ArrayList();
+        sellList.add(getInstance("Продать",1,0,0,0));
+        sellList.add(getInstance("Продать",2,0,0,0));
+        sellList.add(getInstance("Продать",3,0,0,0));
+        sellList.add(getInstance("Продать",4,0,0,0));
+        sellList.add(getInstance("Продать",5,0,0,0));
+        return sellList;
     }
 }
 

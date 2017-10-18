@@ -16,6 +16,7 @@ import java.util.List;
 import ailstars.moneymaker.models.Business;
 import ailstars.moneymaker.models.Player;
 import ailstars.moneymaker.models.Property;
+import ailstars.moneymaker.study.ParameterButton;
 
 public class PropertyActivity extends AppCompatActivity {
     Player player;
@@ -30,6 +31,7 @@ public class PropertyActivity extends AppCompatActivity {
 
         //получить список имущества
         final List<Property> propertylist = Property.getPropertyList();
+        final List<Property> propertysell = Property.getSellPropertyList();
 
 
         //функция обработки
@@ -43,18 +45,15 @@ public class PropertyActivity extends AppCompatActivity {
                     player.buyProperty(propertylist.get(id));
                     restartActivity();
                 }
-                //player.addProperty(propertylist.get(id));
 
             }
         };
-        final View.OnClickListener sellProperty = new View.OnClickListener() {
+        final  View.OnClickListener sellProperty = new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                int id = view.getId();
-                if (player.sellProperty(propertylist.remove(id));)
+            public  void onClick(View view){
+                player.sellProperty(propertylist.get());
             }
-        }
-
+        };
         //слой для создания кнопок
         LinearLayout lin = (LinearLayout)findViewById(R.id.propertyLayout);
         //параметры для размешения кнопок
@@ -77,6 +76,15 @@ public class PropertyActivity extends AppCompatActivity {
             //обработчик для кнопок
 
             button.setOnClickListener(addProperty);
+        }
+        for (Property propsell:propertysell){
+            ParameterButton button = new ParameterButton(PropertyActivity.this);
+            button.id=1;
+            button.setText(propsell.getName());
+            layoutParams.gravity = Gravity.CENTER_HORIZONTAL;
+            button.setLayoutParams(layoutParams);
+            lin.addView(button);
+
         }
     }
 
