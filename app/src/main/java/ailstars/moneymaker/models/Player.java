@@ -9,7 +9,7 @@ import java.util.List;
  * Created by ailst on 01.08.2017.
  */
 
-public class Player {
+public final class Player {
     private static Player instance;
     private Integer mStep = 0;
     private Float money = Float.valueOf(0);
@@ -18,10 +18,8 @@ public class Player {
     private List<Business> business = new ArrayList<>();
     private List<Property> property = new ArrayList<>();
     private List<Property> myProperty = new ArrayList<>();
-    private final Bank bank;
 
     private Player() {
-        bank = new Bank();
     }
 
     public static synchronized Player getInstance() {

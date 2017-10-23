@@ -29,7 +29,7 @@ public class Account {
         return time;
     }
 
-    public static Account getInstance(Types type, Float percent, Float money, Integer time){
+    public static Account getInstance(Types type, Float percent, Integer money, Integer time){
         Account acc= new Account(type,percent,money,time);
         return acc;
     }

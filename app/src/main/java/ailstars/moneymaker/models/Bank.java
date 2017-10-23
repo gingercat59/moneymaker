@@ -16,11 +16,23 @@ import ailstars.moneymaker.R;
  * Created by KOT on 31.08.2017.
  */
 
-public class Bank {
+public final class Bank {
+    private static Bank instance;
     private List<Account> accountList = new ArrayList<>();
     private float sumDebt;
     private float sumCredit;
     private float timeCredit;
+
+    private Bank() {
+
+    }
+    public static synchronized Bank getInstance() {
+
+        if (instance == null) {
+            instance = new Bank();
+        }
+        return instance;
+    }
 
     //проверить можно ли открыть депозит
     private boolean proverkaDepozit (Float countmoney,Float addMoney) {
@@ -46,11 +58,11 @@ public class Bank {
         return  false;
     }
     //если можно добавить новый пункт в список
-    public void createAccount(Account.Types type, Float money, Integer time) {
+    public void createAccount(Account.Types type, Integer money, Integer time) {
         accountList.add(Account.getInstance(type, getPercent(type), money, time));
     }
 
-    private void addAccount(Account account) {
+    public void addAccount(Account account) {
         accountList.add(account);
 
     }
@@ -63,8 +75,6 @@ public class Bank {
         }
         return Float.valueOf(10);
     }
-
-
 
 
 }

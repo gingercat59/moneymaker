@@ -9,6 +9,7 @@ import android.widget.Spinner;
 
 import java.util.List;
 
+import ailstars.moneymaker.models.Account;
 import ailstars.moneymaker.models.Bank;
 import ailstars.moneymaker.models.Player;
 
@@ -27,7 +28,7 @@ public class BankActivity extends AppCompatActivity {
         startActivity(intent);
     }
     Spinner yearCREDIT = (Spinner) findViewById(R.id.yearCREDIT);
-    float t = (float) yearCREDIT.getSelectedItem();
+    Integer t = (Integer) yearCREDIT.getSelectedItem();
 
     EditText sumCREDIT = (EditText)findViewById(R.id.sumCREDIT);
 
@@ -38,6 +39,9 @@ public class BankActivity extends AppCompatActivity {
             Bank.canTakeCredit(player.countMoney(),s,t); {
 
                 if(player.countMoney()> Bank.onePayment(s,t)){
+                    Bank bank = Bank.getInstance();
+                    bank.createAccount(Account.Types.CREDIT,s,t);
+                    bank.addAccount();
                 }
             }
         }
