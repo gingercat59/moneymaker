@@ -16,7 +16,7 @@ import java.util.List;
 import ailstars.moneymaker.models.Business;
 import ailstars.moneymaker.models.Player;
 import ailstars.moneymaker.models.Property;
-import ailstars.moneymaker.study.ParameterButton;
+
 
 public class PropertyActivity extends AppCompatActivity {
     Player player;

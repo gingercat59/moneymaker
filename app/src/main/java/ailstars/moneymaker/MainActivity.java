@@ -11,11 +11,6 @@ import java.util.List;
 import java.util.ArrayList;
 
 import ailstars.moneymaker.models.Player;
-import ailstars.moneymaker.study.Duck;
-import ailstars.moneymaker.study.DuckFabric;
-import ailstars.moneymaker.study.Eatable;
-import ailstars.moneymaker.study.RubberDuck;
-import ailstars.moneymaker.study.Soundable;
 
 public class MainActivity extends AppCompatActivity {
     public Button mNextMove;
